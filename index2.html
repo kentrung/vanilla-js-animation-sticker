@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+    .sticker {display: flex; justify-content: center;}
+		.sticker-QooBee {
+			width: calc(394px / 5); height: calc(315px / 4); margin: 0 10px;
+			background: url(images/QooBee.png) no-repeat 0 0;
+		}
+    .sticker-Qimg {
+			width: calc(1120px / 7); height: calc(960px / 6); margin: 0 10px;
+			background: url(images/Qimg.png) no-repeat 0 0;
+		}
+    .sticker-Betakkuma {
+			width: calc(394px / 5); height: calc(315px / 4); margin: 0 10px;
+			background: url(images/Betakkuma.png) no-repeat 0 0;
+		}
+	</style>
+</head>
+<body>
+  <h1 style="text-align: center;">Animated Sticker</h1>
+  <div class="sticker">
+	  <div class="sticker-QooBee"></div>
+	  <div class="sticker-Qimg"></div>
+	  <div class="sticker-Betakkuma"></div>
+  </div>
+	<script type="text/javascript">
+    function animate1 () {
+      const layoutWidth = 394
+      const layoutHeight = 315
+      const imageTotal = 20
+      const imageWidth = layoutWidth / 5
+      const imageHeight = layoutHeight / 4
+      const stickerElement = document.querySelector('.sticker-QooBee')
+      const step = -imageWidth
+      let count = 1
+
+      setInterval(function() {
+        let posX = 0
+        let posY = 0
+        if (count <= 5) {
+          // hang 1
+          posX = step * (count - 1)
+          posY = step * 0
+        }
+        else if (6 <= count && count <= 10) {
+          // hang 2
+          posX = step * (count - 6)
+          posY = step * 1
+        }
+        else if (11 <= count && count <= 15) {
+          // hang 3
+          posX = step * (count - 11)
+          posY = step * 2
+        }
+        else if (16 <= count && count <= 20) {
+          //hang 4
+          posX = step * (count - 16)
+          posY = step * 3
+        } else {
+          // hang 5
+          posX = step * (count - 21)
+          posY = step * 4
+        }
+        stickerElement.style.backgroundPosition = `${posX}px ${posY}px`
+        count++
+        count = (count >= imageTotal) ? 1 : count
+      }, 2000 / imageTotal)
+    }
+    
+    function animate2 () {
+      const layoutWidth = 1120
+      const layoutHeight = 960
+      const imageTotal = 40
+      const imageWidth = layoutWidth / 7
+      const imageHeight = layoutHeight / 6
+      const stickerElement = document.querySelector('.sticker-Qimg')
+      const step = -imageWidth
+      let count = 1
+
+      setInterval(function() {
+        let posX = 0
+        let posY = 0
+        if (count <= 7) {
+          // hang 1
+          posX = step * (count - 1)
+          posY = step * 0
+        }
+        else if (8 <= count && count <= 14) {
+          // hang 2
+          posX = step * (count - 8)
+          posY = step * 1
+        }
+        else if (15 <= count && count <= 21) {
+          // hang 3
+          posX = step * (count - 15)
+          posY = step * 2
+        }
+        else if (22 <= count && count <= 28) {
+          //hang 4
+          posX = step * (count - 22)
+          posY = step * 3
+        }
+        else if (29 <= count && count <= 35) {
+          //hang 5
+          posX = step * (count - 29)
+          posY = step * 4
+        } else {
+          // hang 6
+          posX = step * (count - 35)
+          posY = step * 5
+        }
+        stickerElement.style.backgroundPosition = `${posX}px ${posY}px`
+        count++
+        count = (count >= imageTotal) ? 1 : count
+      }, 1000 / imageTotal)
+    }
+
+    function animate3 () {
+      const layoutWidth = 394
+      const layoutHeight = 315
+      const imageTotal = 19
+      const imageWidth = layoutWidth / 5
+      const imageHeight = layoutHeight / 4
+      const stickerElement = document.querySelector('.sticker-Betakkuma')
+      const step = -imageWidth
+      let count = 1
+
+      setInterval(function() {
+        let posX = 0
+        let posY = 0
+        if (count <= 5) {
+          // hang 1
+          posX = step * (count - 1)
+          posY = step * 0
+        }
+        else if (6 <= count && count <= 10) {
+          // hang 2
+          posX = step * (count - 6)
+          posY = step * 1
+        }
+        else if (11 <= count && count <= 15) {
+          // hang 3
+          posX = step * (count - 11)
+          posY = step * 2
+        }
+        else if (16 <= count && count <= 20) {
+          //hang 4
+          posX = step * (count - 16)
+          posY = step * 3
+        } else {
+          // hang 5
+          posX = step * (count - 21)
+          posY = step * 4
+        }
+        stickerElement.style.backgroundPosition = `${posX}px ${posY}px`
+        count++
+        count = (count >= imageTotal) ? 1 : count
+      }, 2000 / imageTotal)
+    }
+
+    animate1()
+    animate2()
+    animate3()
+	</script>
+</body>
+</html>

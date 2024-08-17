@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vanilla JS: Animated sticker</title>
+  <style type="text/css">
+    .sticker {
+      width: 130px; height: 130px; margin: auto auto; zoom: 2;
+      background: url(images/Usagyuuun.png) no-repeat 0 0;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Vanilla JS: Animated sticker</h1> 
+  <div class="sticker"></div>
+  <script type="text/javascript">
+    const layoutWidth = 2600
+    const layoutHeight = 130
+    const imageTotal = 20
+    const imageWidth = layoutWidth / imageTotal
+    const imageHeight = layoutHeight
+    let count = 1
+    let positionX = 0
+    const stickerElement = document.querySelector('.sticker')
+
+    setInterval(function() {
+      positionX = -(imageWidth * count)
+      stickerElement.style.backgroundPosition = `${positionX}px 0`
+      count++
+      count = (count >= imageTotal) ? 0 : count
+    }, 1000 / imageTotal)
+  </script>
+  <a 
+    target="_blank"
+    href="https://viblo.asia/p/vanilla-js-project-animated-sticker-djeZ1wQJ5Wz"
+    style="position: fixed; bottom: 10%; left: 5%;"
+  >
+    https://viblo.asia/p/vanilla-js-project-animated-sticker-djeZ1wQJ5Wz
+  </a>
+</body>
+</html>
